@@ -1,0 +1,58 @@
+/* src/components/Stripe/CheckoutForm/styles.css */
+
+.checkout-container {
+  max-width: 480px;
+  margin: 6rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
+}
+
+.checkout-container h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+
+.checkout-button {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 0.875rem;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    opacity 0.2s;
+}
+
+.checkout-button:hover:not(:disabled) {
+  background-color: #333333;
+}
+
+.checkout-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.checkout-message {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  background-color: #fff0f0;
+  color: #e53e3e;
+  border: 1px solid #fecaca;
+}
+
+.checkout-message.success {
+  background-color: #f0fff4;
+  color: #276749;
+  border-color: #9ae6b4;
+}

@@ -1,0 +1,53 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependências e build
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Variáveis de ambiente
+.env
+.env.*
+!.env.example
+
+# Certificados e chaves
+*.pem
+*.key
+*.cert
+*.p12
+
+# Testes e cache
+coverage/
+*.tsbuildinfo
+
+# Configurações locais
+config.local.js
+secrets.js
+
+# Stripe
+.stripe/
+
+# Database
+*.sql
+*.sqlite
+*.db
+dump.rdb
