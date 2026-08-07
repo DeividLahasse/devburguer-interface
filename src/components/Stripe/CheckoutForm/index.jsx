@@ -46,16 +46,18 @@ export function CheckoutForm() {
           quantity: product.quantity,
           price: product.price,
         }));
-
+console.log('Token no header:', api.defaults.headers.common);
         const { status } = await api.post(
-          '/Orders',
+          '/orders',
           { products },
           { validateStatus: () => true },
         );
+        console.log('Status da resposta:', status);
 
         if (status === 201 || status === 200) {
           toast.success('Pedido realizado com sucesso! ✅');
-          clearCart(); // ← removido duplicado
+          clearCart();
+           // ← removido duplicado
           setTimeout(
             () =>
               navigate(
@@ -68,8 +70,13 @@ export function CheckoutForm() {
           toast.error('Falha ao realizar seu pedido');
         } else {
           throw new Error();
+          
+          
         }
+        
+        
       } catch (_error) {
+        console.log('Erro ao criar pedido:', _error);
         toast.error('❌ Falha no sistema, tente novamente');
       }
     } else {

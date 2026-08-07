@@ -5,6 +5,7 @@ import { Table } from '../index';
 import {
   ButtonGroup,
   EmptyCart,
+  ProductImage, 
   ProductToralPrice,
   TrashImage,
 } from './styles';
@@ -31,7 +32,7 @@ export function CartItems() {
           cartProducts.map((product) => (
             <Table.Tr key={product.id}>
               <Table.Td>
-                <img src={product.url} alt='imagem do produto' />
+                <ProductImage src={product.url} alt='imagem do produto' />
               </Table.Td>
 
               <Table.Td>{product.name}</Table.Td>

@@ -51,4 +51,5 @@ height: 120px; /* Aumentei um pouco para dar destaque ao burguer */
   transform: translateX(-50%);  
  object-fit: contain; 
   filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+  border-radius: 70px
 `;

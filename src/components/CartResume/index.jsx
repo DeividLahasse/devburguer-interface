@@ -35,14 +35,12 @@ export function CartResume() {
 
     try {
       const { data } = await api.post('/create-payment-intent', { products });
-      console.log('resposta da API:', data)
-     
+      console.log('resposta da API:', data);
+
       navigate('/checkout', {
         state: data,
-      })
-
+      });
     } catch (_err) {
-       
       toast('❌ Error tente novamente!', {
         position: 'top-right',
         autoClose: 5000,
@@ -56,7 +54,7 @@ export function CartResume() {
     }
   };
 
-  //  
+  //
   return (
     <div>
       <Container>
