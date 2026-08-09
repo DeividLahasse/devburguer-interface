@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { CardProduct } from '../../components/CardProduct';
 import { api } from '../../services/api';
 import { formatPrice } from '../../utils/formatPrice';
+import logo from '../../assets/logo.png';
 import {
   Banner,
   CategoryButton,
@@ -73,7 +74,7 @@ export function Menu() {
         <h1>
           O MELHORB <br />
           HAMBURGUER <br />
-          ESTÁ AQUI <img src="src/assets/logo.png" alt="imagem/hamgurguer" />
+          ESTÁ AQUI <img src={logo} alt="imagem/hamgurguer" />
           <span>Esse cardá!está inresistivel</span>
         </h1>
       </Banner>
