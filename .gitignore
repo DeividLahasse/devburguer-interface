@@ -51,3 +51,6 @@ secrets.js
 *.sqlite
 *.db
 dump.rdb
+
+# Env
+.env
