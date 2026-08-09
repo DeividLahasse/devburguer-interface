@@ -71,8 +71,8 @@ right: 20%;
 top: 30%;
 
     img{
-    height: 70px;
-    width: 80px;
+    height: 55px;
+    width: 90px;
     position: absolute;
     top: 130px;
     right:-20px;

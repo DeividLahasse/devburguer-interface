@@ -73,7 +73,7 @@ export function Menu() {
         <h1>
           O MELHORB <br />
           HAMBURGUER <br />
-          ESTÁ AQUI <img src='src/assets/hmburguer.png' alt='' />
+          ESTÁ AQUI <img src="src/assets/logo.png" alt="imagem/hamgurguer" />
           <span>Esse cardá!está inresistivel</span>
         </h1>
       </Banner>
