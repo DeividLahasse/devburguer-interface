@@ -4,7 +4,7 @@ API REST para um sistema de delivery de hambúrgueres, desenvolvida como projeto
 
 🔗 **API em produção:** [dev-burguer-api-fuoy.onrender.com](https://dev-burguer-api-fuoy.onrender.com)
 
-🔗 **Frontend do projeto:** [devburguer-interface](https://github.com/DeividLahasse/devburguer-interface)
+🔗 **Acesse o projeto:** [devburguer-interface-five.vercel.app](https://devburguer-interface-five.vercel.app)
 
 ## 🚀 Tecnologias utilizadas
 
