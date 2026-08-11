@@ -9,7 +9,7 @@ export function CardProduct({ product }) {
   
   return (
     <Container>
-      <CardImage src={product.url} alt={product.name} />
+     <CardImage src={`https://dev-burguer-api-fuoy.onrender.com/product-file/${product.url}`} alt={product.name} />
 
       <div>
         <p>{product.name}</p>
