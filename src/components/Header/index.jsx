@@ -1,7 +1,6 @@
 import { ShoppingCartIcon, UserCircleIcon } from '@phosphor-icons/react';
-import { useNavigate,useResolvedPath } from 'react-router-dom';
+import { Link, useNavigate, useResolvedPath } from 'react-router-dom';
 import { useUser } from '../../hooks/UserContext';
-import { Link } from 'react-router-dom';
 import {
   Container,
   Content,
@@ -14,10 +13,10 @@ import {
 } from './styles';
 
 export function Header() {
-  const navigate = useNavigate()
-  const { logout, userInfo} = useUser()
+  const navigate = useNavigate();
+  const { logout, userInfo } = useUser();
 
-  const { pathname } = useResolvedPath()
+  const { pathname } = useResolvedPath();
 
   function logoutUser() {
     logout();
@@ -28,14 +27,28 @@ export function Header() {
       <Content>
         <Navigation>
           <div>
-            <HeaderLink to="/" $isActive={pathname === '/'}>Home</HeaderLink>
+            <HeaderLink to='/' $isActive={pathname === '/'}>
+              Home
+            </HeaderLink>
             <hr></hr>
-            <HeaderLink to="/cardapio" $isActive={pathname === '/cardapio'}>Cárdapio</HeaderLink>
+            <HeaderLink to='/cardapio' $isActive={pathname === '/cardapio'}>
+              Cárdapio
+            </HeaderLink>
           </div>
         </Navigation>
-        <Options> 
-          <Link style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none', color: '#fff' }} to='/login' > 
-          <UserCircleIcon color='#fff' size={24} /><p>Login</p>
+        <Options>
+          <Link
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              textDecoration: 'none',
+              color: '#fff',
+            }}
+            to='/login'
+          >
+            <UserCircleIcon color='#fff' size={24} />
+            <p>Login</p>
           </Link>
           <Profile>
             <div>
@@ -48,7 +61,7 @@ export function Header() {
 
           <LinkContainer>
             <ShoppingCartIcon color='#fff' size={24} />
-            <HeaderLink to={"/carrinho"}>Carrinho</HeaderLink>
+            <HeaderLink to={'/carrinho'}>Carrinho</HeaderLink>
           </LinkContainer>
         </Options>
       </Content>
