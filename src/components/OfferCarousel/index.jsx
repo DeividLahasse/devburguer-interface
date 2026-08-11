@@ -63,6 +63,7 @@
 //     </Container>
 //   );
 // }
+
 import { useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -79,9 +80,10 @@ export function OfferCarousel() {
     async function loadProducts() {
       try {
         const response = await api.get('/products');
+        console.log('Produtos que vieram da API:', response.data); // Olhe o F12 depois disso
 
         const onlyOffers = response.data
-          .filter((product) => product.offer)
+          .filter((product) => product.offer === true)
           .map((product) => ({
             ...product,
             currencyValue: formatPrice(product.price),
@@ -89,6 +91,8 @@ export function OfferCarousel() {
               ? product.url
               : `https://dev-burguer-api-fuoy.onrender.com/uploads/${product.url}`,
           }));
+
+        console.log('Produtos filtrados como oferta:', onlyOffers);
         setOffers(onlyOffers);
       } catch (error) {
         console.log('Erro ao carregar ofertas:', error);
@@ -117,23 +121,25 @@ export function OfferCarousel() {
     },
   };
 
-  if (!offer.length) {
-    return null; // Não exibe o carrossel se não houver ofertas carregadas
-  }
-
   return (
     <Container>
       <Title>Ofertas do Dia</Title>
-      <Carousel
-        responsive={responsive}
-        infinite={true}
-        partialVisible={false}
-        itemClass='carousel-item'
-      >
-        {offer.map((product) => (
-          <CardProduct key={product.id} product={product} />
-        ))}
-      </Carousel>
+      {offer.length === 0 ? (
+        <p style={{ color: '#fff', textAlign: 'center', padding: '20px' }}>
+          Carregando ofertas ou nenhuma oferta encontrada...
+        </p>
+      ) : (
+        <Carousel
+          responsive={responsive}
+          infinite={true}
+          partialVisible={false}
+          itemClass='carousel-item'
+        >
+          {offer.map((product) => (
+            <CardProduct key={product.id} product={product} />
+          ))}
+        </Carousel>
+      )}
     </Container>
   );
 }
